@@ -29,6 +29,8 @@
 
     <preference name="phonegap-version"                 value="3.7.0" />          <!-- all: current version of PhoneGap -->
 
+
+
     <preference name="orientation"                      value="all" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"                    value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                       value="false" />           <!-- all: hides the status bar at the top of the screen -->
@@ -58,10 +60,13 @@
 
     <plugin name="org.apache.cordova.file" spec="4.3.3" />
     <plugin name="org.apache.cordova.file-transfer" spec="1.6.3" />
+ <!--   <plugin name="cordova-plugin-screenorientation-landscape" spec="1.6.3" /> -->
 
 
     <gap:plugin name="org.apache.cordova.file" version="4.3.3" source="npm" />
     <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" source="npm" />
+ <!--   <gap:plugin name="cordova-plugin-screenorientation-landscape" version="2.0.1"  source="npm" /> -->
+
     
 
 

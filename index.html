@@ -24,46 +24,44 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width" />
         <!-- <script type="text/javascript" charset="utf-8" src="cordova.js"></script> -->
         <!--<link rel="stylesheet" type="text/css" href="css/global.css">-->
+     <!--   <script type="text/javascript" src="cordova.js"></script> -->
         <script type="text/javascript">
 
 
-     function initialize() {
-        document.addEventListener("deviceready", onDeviceReady, true);
-    }
 
-    
+
+   //  function initialize() {
+  //      document.addEventListener("deviceready", onDeviceReady, true);
+  //  }
+
+
             window.location = 'http://app.totalcontent.mx/';
          //   window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
 
             
         //    document.getElementByClass("icon_descargar").addEventListener("click", downloadFile);
 
-function download(fileEntry, uri) {
- 
-    var fileTransfer = new FileTransfer();
-    var fileURL = fileEntry.toURL();
- 
-    fileTransfer.download(
-        uri,
-        fileURL,
-        function (entry) {
-            console.log("Successful download...");
-            console.log("download complete: " + entry.toURL());
-            readFile(entry);
-        },
-        function (error) {
-            console.log("download error source " + error.source);
-            console.log("download error target " + error.target);
-            console.log("upload error code" + error.code);
-        },
-        null, // or, pass false 
-        {
-            //headers: { 
-            //    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA==" 
-            //} 
+var fileTransfer = new FileTransfer();
+var uri = encodeURI("http://app.totalcontent.mx/wp-content/uploads/2017/06/Lista-de-Precios-VW-Autos-Pasajeros-Modelos-2018-vigente-01.06.2017.pdf");
+
+fileTransfer.download(
+    uri,
+    fileURL,
+    function(entry) {
+        console.log("download complete: " + entry.toURL());
+    },
+    function(error) {
+        console.log("download error source " + error.source);
+        console.log("download error target " + error.target);
+        console.log("download error code" + error.code);
+    },
+    false,
+    {
+        headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
         }
-    );
-}
+    }
+);
 
 
 
