@@ -24,10 +24,10 @@
    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-  <preference name="phonegap-version" value="cli-6.4.0" /> 
+  <!-- <preference name="phonegap-version" value="cli-6.4.0" />  -->
 
 
-  <!-- <preference name="phonegap-version"                 value="3.6.3" />  -->        <!-- all: current version of PhoneGap -->
+   <preference name="phonegap-version"                 value="3.6.3" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                      value="all" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"                    value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                       value="false" />           <!-- all: hides the status bar at the top of the screen -->
@@ -46,7 +46,7 @@
     <preference name="HideKeyboardFormAccessoryBar"     value="true" />
     <preference name="WebViewBounce"                    value="true" />
     
-  <!--   <feature name="http://api.phonegap.com/1.0/device" /> -->
+    <feature name="http://api.phonegap.com/1.0/device" /> 
 
 
 
