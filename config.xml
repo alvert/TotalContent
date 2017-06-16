@@ -54,7 +54,7 @@
     <gap:plugin  name="org.apache.cordova.file" ></gap:plugin>
     <gap:plugin name="org.apache.cordova.file-transfer" version="0.4.6" /> -->
 
-     <gap:plugin name="org.apache.cordova.file" />
+
     <gap:plugin name="org.apache.cordova.file-transfer" />
     
    
