@@ -46,7 +46,7 @@
     <preference name="HideKeyboardFormAccessoryBar"     value="true" />
     <preference name="WebViewBounce"                    value="true" />
     
-    <feature name="http://api.phonegap.com/1.0/device" />
+  <!--   <feature name="http://api.phonegap.com/1.0/device" /> -->
 
 
 
@@ -54,8 +54,8 @@
 <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" /> -->
 
 
-    <gap:plugin name="org.apache.cordova.file" version="4.3.3" />
-    <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" />
+    <gap:plugin name="org.apache.cordova.file" version="4.3.3" source="npm" />
+    <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" source="npm" />
 
 <!--    <gap:plugin name="org.apache.cordova.file" version="1.6.3" />
     <gap:plugin  name="org.apache.cordova.file" ></gap:plugin>
