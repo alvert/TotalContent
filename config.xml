@@ -24,12 +24,10 @@
    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-<!--   <preference name="phonegap-version" value="cli-6.4.0" />  -->
+  <preference name="phonegap-version" value="cli-6.4.0" /> 
 
 
-   <!-- <preference name="phonegap-version"                 value="3.6.3" />   -->       <!-- all: current version of PhoneGap -->
-
-     <preference name="phonegap-version"                 value="4.0.0" />        <!-- all: current version of PhoneGap -->
+<!--    <preference name="phonegap-version"                 value="3.6.3" /> -->         <!-- all: current version of PhoneGap -->
 
     <preference name="orientation"                      value="all" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"                    value="universal" />      <!-- all: possible values handset, tablet, or universal -->
@@ -62,8 +60,8 @@
     <plugin name="org.apache.cordova.file-transfer" spec="1.6.3" />
 
 
-    <gap:plugin name="org.apache.cordova.file" version="4.3.3" source="npm" />
-    <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" source="npm" />
+    <gap:plugin name="org.apache.cordova.file" version="4.3.3"  />
+    <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" />
     
 
 
