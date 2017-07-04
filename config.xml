@@ -48,6 +48,17 @@
     <preference name="DisallowOverscroll"               value="true" />
     <preference name="HideKeyboardFormAccessoryBar"     value="true" />
     <preference name="WebViewBounce"                    value="true" />
+
+
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+
+<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
+
+<preference name="iosPersistentFileLocation" value="Library" />
+
+<preference name="iosPersistentFileLocation" value="Compatibility" />
+
     
     <feature name="http://api.phonegap.com/1.0/device" /> 
 
@@ -57,12 +68,14 @@
 <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" /> -->
 
 
-
+ 
     <plugin name="org.apache.cordova.file" spec="4.3.3" />
     <plugin name="org.apache.cordova.file-transfer" spec="1.6.3" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="0.3.3" source="pgb" />
  <!--   <plugin name="cordova-plugin-screenorientation-landscape" spec="1.6.3" /> -->
 
-
+  <!--  <gap:plugin name="org.apache.cordova.core.inappbrowser" /> -->
+  <gap:plugin name="cordova-plugin-inappbrowser" source="pgb"/>
     <gap:plugin name="org.apache.cordova.file" version="4.3.3" source="npm" />
     <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" source="npm" />
  <!--   <gap:plugin name="cordova-plugin-screenorientation-landscape" version="2.0.1"  source="npm" /> -->

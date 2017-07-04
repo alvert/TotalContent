@@ -30,6 +30,8 @@
 
 
 
+
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -38,13 +40,85 @@ function onDeviceReady() {
   // document.getElementsByClassName("icon_descargar").addEventListener("click", downloadFile);
 
          
+// navigator.app.loadUrl('https://google.com/', { openExternal:true });
+
+
+// window.location = 'http://app.totalcontent.mx/' , '_system';
+//window.open($this.attr('href'), target, 'location=no');
+// window.location('http://app.totalcontent.mx/');
+
 
 }
 
 
 
 
-window.location = 'http://app.totalcontent.mx/';
+
+
+
+var uri = encodeURI("http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf");
+window.requestFileSystem(LocalFileSystem.TEMPORARY, 0,
+    function (fileSystem) {
+        var fileTransfer = new FileTransfer();
+        var filename = fileSystem.root.toURL() + uri.substr(uri.lastIndexOf("/") + 1);
+        fileTransfer.download(uri, filename,
+            function(entry) { // download success
+                var path = entry.toURL(); //**THIS IS WHAT I NEED**
+                window.open(path, "_system");
+            },
+            function(error) {} // irrelevant download error
+        );
+    },
+    function(error) {} // irrelevant request fileSystem error
+);
+
+
+
+
+
+
+window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, gotFS, fail);
+
+function fail(error) {
+    console.log(error)
+}
+
+function gotFS(fileSystem) {
+   fileSystem.root.getDirectory("data", {create: true, exclusive: false}, gotDir, fail);
+}
+
+function gotDir(dirEntry) {
+    dirEntry.getFile("unixtoolbox.pdf", {create: true, exclusive: false}, gotFile, fail);
+}
+
+function gotFile(fileEntry) {
+    // Start FileTransfer here...
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI("http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf");
+
+    fileTransfer.download(
+        uri,
+        fileEntry.fullPath,
+        function(entry) {
+            //window.plugins.webintent.startActivity({
+            //    action: WebIntent.ACTION_VIEW,
+            //    url: encodeURI(entry.fullPath),
+            //}, function () {}, function (error) {
+            //   console.log(error);
+            //});
+            window.open(encodeURI(entry.fullPath),"_blank","location=no,enableViewportScale=yes")
+            console.log("download complete: " + entry.fullPath);
+        },
+        function(error) {
+            console.log("download error source " + error.source);
+            console.log("download error target " + error.target);
+            console.log("upload error code" + error.code);
+        }
+    );
+}
+
+
+//window.location = 'http://app.totalcontent.mx/' , '_system';
 
 
 
@@ -61,5 +135,6 @@ window.location = 'http://app.totalcontent.mx/';
                 <object data="http://app.totalcontent.mx/"></object>
             </div>
         </div>-->
+        <a target="_system" href="http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf" download>boton</a>
     </body>
 </html>
