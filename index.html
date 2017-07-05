@@ -98,9 +98,9 @@ function onDeviceReady() {
 
 
 
-var ref = cordova.InAppBrowser.open('http://app.totalcontent.mx/', '_blank', 'location=no');
+// var ref = cordova.InAppBrowser.open('http://app.totalcontent.mx/', '_blank', 'location=no');
 
-window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
+// window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
 
 
 
@@ -111,6 +111,7 @@ window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidde
 
 
 $window.OpenLink = function(link) {
+    alert("hisi");
        // window.open( link, '_system');
         cordova.InAppBrowser.open(link, '_system');
     };
@@ -296,6 +297,6 @@ function gotFile(fileEntry) {
     <button onclick="OpenLink('http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf')">Download</button>
 
 
-    
+
     </body>
 </html>
