@@ -71,11 +71,11 @@
  
     <plugin name="org.apache.cordova.file" spec="4.3.3" />
     <plugin name="org.apache.cordova.file-transfer" spec="1.6.3" />
-    <plugin name="org.apache.cordova.inappbrowser" spec="0.3.3" source="npm" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="0.3.3"  />
  <!--   <plugin name="cordova-plugin-screenorientation-landscape" spec="1.6.3" /> -->
 
   <!--  <gap:plugin name="org.apache.cordova.core.inappbrowser" /> -->
-  <gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
+    <gap:plugin name="cordova-plugin-inappbrowser" />
     <gap:plugin name="org.apache.cordova.file" version="4.3.3" source="npm" />
     <gap:plugin name="org.apache.cordova.file-transfer" version="1.6.3" source="npm" />
  <!--   <gap:plugin name="cordova-plugin-screenorientation-landscape" version="2.0.1"  source="npm" /> -->
