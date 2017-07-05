@@ -103,7 +103,7 @@ function onDeviceReady() {
 
 
 
-
+/*
 windowref.addEventListener('loadstart', function(e) {
 
 window.open = cordova.InAppBrowser.open;
@@ -112,7 +112,7 @@ window.open = cordova.InAppBrowser.open;
               var url = e.url;
               var extension = url.substr(url.length - 4);
 
-                if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) {
+            //    if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) {
                    
                    alert("no tiene ?");
 
@@ -130,11 +130,11 @@ window.open = cordova.InAppBrowser.open;
 
                                        
 
-                                        window.open(url, '_system', 'location=yes');
+                                    //    window.open(url, '_system', 'location=yes');
 
 
 
-                                    //  windowref.close(); // close window or you get exception
+                                      windowref.close(); // close window or you get exception
 
                                        document.addEventListener('deviceready', function () {
                                          
@@ -149,7 +149,7 @@ window.open = cordova.InAppBrowser.open;
                     }
 
 
-                }
+           //     }
 
 
               
@@ -163,11 +163,34 @@ window.open = cordova.InAppBrowser.open;
               
 });
 
+*/
+
+
+windowref.addEventListener('loadstart', function(e) {
+  var url = e.url;
+  var extension = url.substr(url.length - 4);
+  if (extension == '.pdf') {
+    var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
+    var options = {};
+    var args = {
+      url: url,
+      targetPath: targetPath,
+      options: options
+    };
+    windowref.close(); // close window or you get exception
+    document.addEventListener('deviceready', function () {
+      $timeout(function() {
+        downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
+      }, 1000);
+    });
+  }
+});
+
 
      windowref.addEventListener('loadstop', function() {
         //Page loaded! some code here..
 
-         alert("ya cargo");
+       //  ref.executeSript({code: "alert('BLA BLA BLA')"});
 
         window.open = cordova.InAppBrowser.open;
 
