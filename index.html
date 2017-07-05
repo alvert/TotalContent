@@ -32,7 +32,7 @@
 
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
    //anything you want done after deviceready has fired
@@ -56,6 +56,7 @@ function onDeviceReady() {
 
 document.addEventListener("deviceready", init, false);
 
+alert("hi");
 //The directory to store data
 var store;
 
@@ -193,6 +194,9 @@ function gotFile(fileEntry) {
             </div>
         </div>-->
         <a target="_system" href="http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf" download>boton</a>
+
+        <a target="_system" href="file://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf" download>boton</a>
+
         <h2>My App</h2>
     <div id="status"></div>
     </body>
