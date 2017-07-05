@@ -24,24 +24,25 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width" />
         <!-- <script type="text/javascript" charset="utf-8" src="cordova.js"></script> -->
         <!--<link rel="stylesheet" type="text/css" href="css/global.css">-->
-        <script type="text/javascript" src="cordova.js"></script>
+        
+    <!--    <script type="text/javascript" src="require.js"></script> -->
+        <script type="text/javascript" src="cordova_viejo.js"></script>
         <script type="text/javascript">
 
 
 
 
 
-
-// document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
    //anything you want done after deviceready has fired
    // alert("testing app");
   // document.getElementsByClassName("icon_descargar").addEventListener("click", downloadFile);
-
+console.log(FileTransfer);
          
 // navigator.app.loadUrl('https://google.com/', { openExternal:true });
-
+alert("hi");
 
 // window.location = 'http://app.totalcontent.mx/' , '_system';
 //window.open($this.attr('href'), target, 'location=no');
@@ -52,11 +53,13 @@ function onDeviceReady() {
 
 
 
+/*
+
 
 
 document.addEventListener("deviceready", init, false);
 
-alert("hi");
+
 //The directory to store data
 var store;
 
