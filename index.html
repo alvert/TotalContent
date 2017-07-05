@@ -112,11 +112,30 @@ function onDeviceReady() {
 windowref.addEventListener('loadstart', function(e) {
 
 
-/* if ( $(e).hasClass('icon_descargar') ){  */
+
 
             window.open = cordova.InAppBrowser.open;
 
-   
+
+
+    document.getElementByClassName("icon_descargar").addEventListener('click',function (link)
+    
+    {
+
+     alert("hello");
+     var link = $(this).attr("href");
+            alert(link);
+     window.open( link, '_system');
+     //validation code to see State field is mandatory.  
+    }  
+
+    );
+
+
+           // var myClass = $(this).attr("class");
+           // alert(myClass);
+
+/*   
               var url = e.url;
               var extension = url.substr(url.length - 4);
 
@@ -133,18 +152,25 @@ windowref.addEventListener('loadstart', function(e) {
 
                 window.open(url, '_system', 'location=yes');
 
+
+
             //   windowref.close(); // close window or you get exception
 
-                document.addEventListener('deviceready', function () {
+               document.addEventListener('deviceready', function () {
+                 
                   $timeout(function() {
                     downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
+                 
                   }, 1000);
+               
                 });
+*/
+
               }
 
 
 
-/* } */
+
 
 
 
