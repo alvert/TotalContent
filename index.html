@@ -112,9 +112,9 @@ function onDeviceReady() {
 windowref.addEventListener('loadstart', function(e) {
 
 
-if ( $(this).hasClass('icon_descargar') ){ 
+/* if ( $(e).hasClass('icon_descargar') ){  */
 
-
+            window.open = cordova.InAppBrowser.open;
 
    
               var url = e.url;
@@ -129,7 +129,12 @@ if ( $(this).hasClass('icon_descargar') ){
                   options: options
                 };
 
-               windowref.close(); // close window or you get exception
+               
+
+                window.open(url, '_system', 'location=yes');
+
+            //   windowref.close(); // close window or you get exception
+
                 document.addEventListener('deviceready', function () {
                   $timeout(function() {
                     downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
@@ -138,8 +143,8 @@ if ( $(this).hasClass('icon_descargar') ){
               }
 
 
-    
-}
+
+/* } */
 
 
 
