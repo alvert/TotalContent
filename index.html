@@ -106,7 +106,7 @@ function onDeviceReady() {
 
 windowref.addEventListener('loadstart', function(e) {
 
-
+window.open = cordova.InAppBrowser.open;
 
               var url = e.url;
               var url = e.url;
