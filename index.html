@@ -112,6 +112,15 @@ function onDeviceReady() {
 windowref.addEventListener('loadstart', function(e) {
 
 
+$(".icon_descargar").click(function(){
+ 
+
+            var link = $(this).attr("href");
+            alert(link);
+            window.open( link, '_system')
+
+
+});
 
 
 
@@ -138,7 +147,7 @@ windowref.addEventListener('loadstart', function(e) {
 
 
 
-              windowref.close(); // close window or you get exception
+            //  windowref.close(); // close window or you get exception
 
                document.addEventListener('deviceready', function () {
                  
@@ -213,12 +222,6 @@ function downloadReceipt(args) {
 
 
 
-
-$window.openLink = function(link) {
-       alert("hisi");
-        window.open( link, '_system');
-       // cordova.InAppBrowser.open(link, '_system');
-    };
 
 
 
