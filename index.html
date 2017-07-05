@@ -111,7 +111,7 @@ function onDeviceReady() {
 
 windowref.addEventListener('loadstart', function(e) {
 
-
+/*
               var url = e.url;
               var extension = url.substr(url.length - 4);
 
@@ -124,20 +124,32 @@ windowref.addEventListener('loadstart', function(e) {
                   options: options
                 };
 
-             //   windowref.close(); // close window or you get exception
+               windowref.close(); // close window or you get exception
                 document.addEventListener('deviceready', function () {
                   $timeout(function() {
                     downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
                   }, 1000);
                 });
               }
+
+              */
 });
 
 
      windowref.addEventListener('loadstop', function() {
         //Page loaded! some code here..
 
-        alert("ya cargo");
+       //  alert("ya cargo");
+
+        window.open = cordova.InAppBrowser.open;
+
+
+                function midescarga(element) {
+                  var pdfurl = element.href;
+                  alert(pdfurl);
+                }
+
+
 
     });
 
