@@ -99,7 +99,7 @@ function onDeviceReady() {
 
     window.open = cordova.InAppBrowser.open;
 
-    var windowref = window.open('http://app.totalcontent.mx/total-content/primer-contacto/lista-de-precios-primer-contacto/', '_blank', 'location=no');
+    var windowref = window.open('http://app.totalcontent.mx/', '_blank', 'location=no');
 
 
     /* ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
@@ -112,9 +112,11 @@ function onDeviceReady() {
 windowref.addEventListener('loadstart', function(e) {
 
 
+if ( $(this).hasClass('icon_descargar') ){ 
 
 
 
+   
               var url = e.url;
               var extension = url.substr(url.length - 4);
 
@@ -134,6 +136,12 @@ windowref.addEventListener('loadstart', function(e) {
                   }, 1000);
                 });
               }
+
+
+    
+}
+
+
 
               
 });
