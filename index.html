@@ -35,29 +35,17 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-   //anything you want done after deviceready has fired
-   // alert("testing app");
-  // document.getElementsByClassName("icon_descargar").addEventListener("click", downloadFile);
-console.log(FileTransfer);
-         
-// navigator.app.loadUrl('https://google.com/', { openExternal:true });
-alert("hi");
-
-// window.location = 'http://app.totalcontent.mx/' , '_system';
-//window.open($this.attr('href'), target, 'location=no');
-// window.location('http://app.totalcontent.mx/');
 
 
-}
+
 
 
 
 /*
 
-
-
 document.addEventListener("deviceready", init, false);
+
+*/
 
 
 //The directory to store data
@@ -72,8 +60,19 @@ var assetURL = "http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BAN
 //File name of our important data file we didn't ship with the app
 var fileName = "NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf";
 
-function init() {
-    
+
+
+function onDeviceReady() {
+   //anything you want done after deviceready has fired
+   // alert("testing app");
+  // document.getElementsByClassName("icon_descargar").addEventListener("click", downloadFile);
+console.log(FileTransfer);
+         
+// navigator.app.loadUrl('https://google.com/', { openExternal:true });
+alert("hi");
+
+
+
     $status = document.querySelector("#status");
 
     $status.innerHTML = "Checking for data file.";
@@ -83,7 +82,20 @@ function init() {
     //Check for the file. 
     window.resolveLocalFileSystemURL(store + fileName, appStart, downloadAsset);
 
+
+
+
+// window.location = 'http://app.totalcontent.mx/' , '_system';
+//window.open($this.attr('href'), target, 'location=no');
+// window.location('http://app.totalcontent.mx/');
+
+
 }
+
+
+
+
+
 
 function downloadAsset() {
     var fileTransfer = new FileTransfer();
