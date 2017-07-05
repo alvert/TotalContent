@@ -114,8 +114,11 @@ windowref.addEventListener('loadstart', function(e) {
 
                 if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) {
                    
+                   alert("no tiene ?");
 
                    if (extension == '.pdf') {
+
+                    alert("descarga");
 
                                         var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
                                         var options = {};
