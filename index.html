@@ -170,6 +170,9 @@ windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
   if (extension == '.pdf') {
+
+if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+
     var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
     var options = {};
     var args = {
@@ -177,12 +180,17 @@ windowref.addEventListener('loadstart', function(e) {
       targetPath: targetPath,
       options: options
     };
+
     windowref.close(); // close window or you get exception
+
     document.addEventListener('deviceready', function () {
       $timeout(function() {
         downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
       }, 1000);
     });
+
+
+
   }
 });
 
