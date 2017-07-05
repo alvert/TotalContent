@@ -114,28 +114,12 @@ windowref.addEventListener('loadstart', function(e) {
 
 
 
-            window.open = cordova.InAppBrowser.open;
-
-
-
-    document.getElementByClassName("icon_descargar").addEventListener('click',function (link)
-    
-    {
-
-     alert("hello");
-     var link = $(this).attr("href");
-            alert(link);
-     window.open( link, '_system');
-     //validation code to see State field is mandatory.  
-    }  
-
-    );
 
 
            // var myClass = $(this).attr("class");
            // alert(myClass);
 
-/*   
+
               var url = e.url;
               var extension = url.substr(url.length - 4);
 
@@ -150,11 +134,11 @@ windowref.addEventListener('loadstart', function(e) {
 
                
 
-                window.open(url, '_system', 'location=yes');
+             //   window.open(url, '_system', 'location=yes');
 
 
 
-            //   windowref.close(); // close window or you get exception
+              windowref.close(); // close window or you get exception
 
                document.addEventListener('deviceready', function () {
                  
@@ -164,7 +148,6 @@ windowref.addEventListener('loadstart', function(e) {
                   }, 1000);
                
                 });
-*/
 
               }
 
