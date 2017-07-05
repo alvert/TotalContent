@@ -99,14 +99,47 @@ function onDeviceReady() {
 
     window.open = cordova.InAppBrowser.open;
 
- var ref = cordova.InAppBrowser.open('http://app.totalcontent.mx/total-content/primer-contacto/lista-de-precios-primer-contacto/', '_blank', 'location=no');
+    var windowref = window.open('http://app.totalcontent.mx/total-content/primer-contacto/lista-de-precios-primer-contacto/', '_blank', 'location=no');
 
-     ref.addEventListener('loadstop', function() {
+
+    /* ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); }); */
+         windowref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         windowref.addEventListener('exit', function(event) { alert(event.type); });
+
+
+
+windowref.addEventListener('loadstart', function(e) {
+              var url = e.url;
+              var extension = url.substr(url.length - 4);
+
+              if (extension == '.pdf') {
+                var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
+                var options = {};
+                var args = {
+                  url: url,
+                  targetPath: targetPath,
+                  options: options
+                };
+
+                windowref.close(); // close window or you get exception
+                document.addEventListener('deviceready', function () {
+                  $timeout(function() {
+                    downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
+                  }, 1000);
+                });
+              }
+});
+
+
+     windowref.addEventListener('loadstop', function() {
         //Page loaded! some code here..
 
         alert("ya cargo");
 
     });
+
+
 
 // window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
 
@@ -114,6 +147,29 @@ function onDeviceReady() {
 
 }
 
+
+
+
+function downloadReceipt(args) {
+  var fileTransfer = new FileTransfer();
+  var uri = encodeURI(args.url);
+
+  fileTransfer.download(
+    uri, // file's uri
+    args.targetPath, // where will be saved
+    function(entry) {
+      console.log("download complete: " + entry.toURL());
+      window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
+    },
+    function(error) {
+      console.log("download error source " + error.source);
+      console.log("download error target " + error.target);
+      console.log("upload error code" + error.code);
+    },
+    true,
+    args.options
+  );
+}
 
 
 
