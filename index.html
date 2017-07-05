@@ -32,113 +32,55 @@
 
 
 
+/* 
+function download(URL, fileName){
+   var folderName = 'xyz';
+   var uri = encodeURI(URL);
 
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function (fileSystem) {
+                var directoryEntry = fileSystem.root; // to get root path of directory
+                directoryEntry.getDirectory(folderName, {
+                    create: true,
+                    exclusive: false
+                }, onDirectorySuccess, onDirectoryFail); 
+                var filename = fileSystem.root.toURL() + folderName + "/" + uri.substr(uri.lastIndexOf("/") + 1);
 
-document.addEventListener("deviceready", init, false);
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(uri, filename,
+                    function(entry) { // download success
+                        var path = entry.toURL(); //**THIS IS WHAT I NEED**
+                        window.plugins.toast.showLongBottom("Download Completed: " + entry.fullPath, function (a) {
+                        }, function (b) {
+                        });
+                    },
+                    function(error) {
+                        console.log("error")
+                    } // irrelevant download error
+                );`enter code here`
+            },
+            function(error) {
+                console.log("error2")
+            } // irrelevant request fileSystem error
+        );
 
-//The directory to store data
-var store;
-
-//Used for status updates
-var $status;
-
-//URL of our asset
-var assetURL = "http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf";
-
-//File name of our important data file we didn't ship with the app
-var fileName = "mydatafile.pdf";
-
-function init() {
-    
-    $status = document.querySelector("#status");
-
-    $status.innerHTML = "Checking for data file.";
-
-    store = cordova.file.dataDirectory;
-
-    //Check for the file. 
-    window.resolveLocalFileSystemURL(store + fileName, appStart, downloadAsset);
-
-}
-
-function downloadAsset() {
-    var fileTransfer = new FileTransfer();
-    console.log("About to start transfer");
-    fileTransfer.download(assetURL, store + fileName, 
-        function(entry) {
-            console.log("Success!");
-            appStart();
-        }, 
-        function(err) {
-            console.log("Error");
-            console.dir(err);
-        });
-}
-
-//I'm only called when the file exists or has been downloaded.
-function appStart() {
-    $status.innerHTML = "App ready!";
-}
-
-
-
-/*
-
-
-
-
-var folderName = 'xyz';
-var fileName;
-
-function downloadFile(URL) {
-    //step to request a file system 
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
-
-    function fileSystemSuccess(fileSystem) {
-        var download_link = encodeURI(URL);
-        fileName = download_link.substr(download_link.lastIndexOf('/') + 1); //Get filename of URL
-        var directoryEntry = fileSystem.root; // to get root path of directory
-        directoryEntry.getDirectory(folderName, {
-            create: true,
-            exclusive: false
-        }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
-        var rootdir = fileSystem.root;
-        var fp = fileSystem.root.toNativeURL(); // Returns Fullpath of local directory
-
-        fp = fp + "/" + folderName + "/" + fileName; // fullpath and name of the file which we want to give
-        // download function call
-        filetransfer(download_link, fp);
-    }
-
-    function onDirectorySuccess(parent) {
-        // Directory created successfuly
-    }
-
-    function onDirectoryFail(error) {
-        //Error while creating directory
-        alert("Unable to create new directory: " + error.code);
-
-    }
-
-    function fileSystemFail(evt) {
-        //Unable to access file system
-        alert(evt.target.error.code);
-    }
-}
-
-function filetransfer(download_link, fp) {
-    var fileTransfer = new FileTransfer();
-    // File download function with URL and local path
-    fileTransfer.download(download_link, fp,
-        function(entry) {
-            alert("download complete: " + entry.fullPath);
-        },
-        function(error) {
-            //Download abort errors or download failed errors
-            alert("download error source " + error.source);
+        function onDirectorySuccess(parent) {
+            // Directory created successfuly
+            console.log("Directory created successfuly: " + JSON.stringify(parent));
+            var fp = (parent.nativeURL) + fileName;
+            filetransfer(download_link, fp);
         }
-    );
-}
+
+        function onDirectoryFail(error) {
+            //Error while creating directory
+            alert("Unable to create new directory: " + error.code);
+        }
+    }
+
+
+
+
+
 
 
 
@@ -147,9 +89,24 @@ function filetransfer(download_link, fp) {
 
 
 
-/*
+
 
 document.addEventListener("deviceready", onDeviceReady, false);
+
+
+function onDeviceReady() {
+
+
+
+var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+
+
+
+}
+
+
+
+/*
 
 
 
