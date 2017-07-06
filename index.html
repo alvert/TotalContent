@@ -171,7 +171,7 @@ windowref.addEventListener('loadstart', function(e) {
   var extension = url.substr(url.length - 4);
  
  var descarga = url.substr(0,37);
- alert(descarga);
+ // alert(descarga);
 
       if (extension == '.pdf') {
 
@@ -186,8 +186,9 @@ alert("es pdf");
                     } else {
 
                         alert("descarga");
-
-                          // if (strpos(url, 'http://app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+                        
+                        window.open(url, '_system', 'location=yes');
+         
 /*
                                                 var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
                                                 var options = {};
