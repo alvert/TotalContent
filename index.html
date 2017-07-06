@@ -117,20 +117,18 @@ windowref.addEventListener('loadstart', function(e) {
                      if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
 
              
-                       // no fue encontrada en la cadena 
+                       // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
                     } else {
 
                      
 
 
                                                // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
-                                               var namefile = GetFilename(url);
-                                               var TC = "Download/";
-                                var targetPath = cordova.file.externalRootDirectory  + TC + namefile + extension;
-                                              alert(targetPath);
+                                                var targetPath = cordova.file.externalRootDirectory + "receipt.pdf";
+                                              
 
                                                 var options = {};
-                                              
+                                                alert(targetPath);
 
                                                 var args = {
                                                   url: url,
@@ -138,7 +136,12 @@ windowref.addEventListener('loadstart', function(e) {
                                                   options: options
                                                 };
 
-                                                // downloadReceipt(args); 
+                                               // windowref.close(); // close window or you get exception
+
+
+                                               // fdentro();
+                                               // ffuera();
+                                                downloadReceipt(args); 
 
 
 
@@ -214,22 +217,6 @@ function downloadReceipt(args) {
 }
 
 
-
-
-
-
-function GetFilename(url)
-{
-   if (url)
-   {
-      var m = url.toString().match(/.*\/(.+?)\./);
-      if (m && m.length > 1)
-      {
-         return m[1];
-      }
-   }
-   return "";
-}
 
 
 
