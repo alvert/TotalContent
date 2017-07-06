@@ -97,6 +97,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 
+
+
     window.open = cordova.InAppBrowser.open;
 
     var windowref = window.open('http://app.totalcontent.mx/', '_blank', 'location=no');
@@ -126,7 +128,7 @@ windowref.addEventListener('loadstart', function(e) {
                                                // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
                                                var namefile = GetFilename(url);
                                 
-                                var tc = "Download/";
+                                var tc = "TotalContent/";
                                 var targetPath = cordova.file.externalRootDirectory + tc + namefile + extension ;
                                               
 
@@ -201,10 +203,15 @@ function downloadReceipt(args) {
   // alert(uri);
   window.open = cordova.InAppBrowser.open;
 
+   $(".cuerpo").addClass("loading");
+
   fileTransfer.download(
     uri, // file's uri
     args.targetPath, // where will be saved
     function(entry) {
+
+    $(".cuerpo").removeClass("loading");
+    
       alert("Descarga completa : " + entry.toURL());
       //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
      //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
