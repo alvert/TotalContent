@@ -103,69 +103,6 @@ function onDeviceReady() {
 
 
 
-/*
-windowref.addEventListener('loadstart', function(e) {
-
-window.open = cordova.InAppBrowser.open;
-
-              var url = e.url;
-              var url = e.url;
-              var extension = url.substr(url.length - 4);
-
-            //    if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) {
-                   
-                   alert("no tiene ?");
-
-                   if (extension == '.pdf') {
-
-                    alert("descarga");
-
-                                        var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
-                                        var options = {};
-                                        var args = {
-                                          url: url,
-                                          targetPath: targetPath,
-                                          options: options
-                                        };
-
-                                       
-
-                                    //    window.open(url, '_system', 'location=yes');
-
-
-
-                                      windowref.close(); // close window or you get exception
-
-                                       document.addEventListener('deviceready', function () {
-                                         
-                                                  $timeout(function() {
-                                                    alert("ejecuta el filetransfer");
-                                                    downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
-                                                 
-                                                  }, 1000);
-                                       
-                                        });
-
-                    }
-
-
-           //     }
-
-
-              
-
-
-
-
-
-
-
-              
-});
-
-*/
-
-
 windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
@@ -195,6 +132,9 @@ alert("es pdf");
                                var fileURL =  "///storage/emulated/0/DCIM/myFile";
 
                                fileTransfer.download(
+
+                                    alert("no pasa");
+
                                   uri, fileURL, function(entry) {
                                      console.log("download complete: " + entry.toURL());
                                   },
