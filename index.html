@@ -171,7 +171,26 @@ windowref.addEventListener('loadstart', function(e) {
   var extension = url.substr(url.length - 4);
   if (extension == '.pdf') {
 
-if (strpos($url, 'app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+
+
+    if (strpos(url,'app.totalcontent.mx/pdf/?file=') !== false) {
+    echo 'Car exists. vista';
+} else {
+    echo 'No cars. descarga';
+}
+
+
+
+
+    if (strpos($url,'app.totalcontent.mx/pdf/?file=') !== false) {
+    echo 'Car exists. vista';
+} else {
+    echo 'No cars. descarga';
+}
+
+
+
+// if (strpos(url, 'app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
 
     var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
     var options = {};
