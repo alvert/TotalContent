@@ -156,8 +156,13 @@ alert("es pdf");
          */
 
                                                 var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
+                                                var targetPath1 = cordova.file.externalRootDirectory + "receipt.pdf";
+                                                var targetPath2 = cordova.file.externalDataDirectory + "receipt.pdf";
+
                                                 var options = {};
                                                 alert(targetPath);
+                                                alert(targetPath1);
+                                                alert(targetPath2);
                                                 var args = {
                                                   url: url,
                                                   targetPath: targetPath,
