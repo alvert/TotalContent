@@ -170,23 +170,23 @@ windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
  
- var descarga = url.substr(0,4);
+ var descarga = url.substr(0,37);
  alert(descarga);
 
 
 
 
-/*
- if (descarga === false) {
 
-    alert("es descarga")
+ if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
+
+    alert("vista")
    // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
 } else {
 
-    alert("solo vista")
+    alert("descarga")
  
 }
-*/
+
 
   if (extension == '.pdf') {
 
@@ -194,7 +194,7 @@ windowref.addEventListener('loadstart', function(e) {
 
 
 
-   // if (strpos(url, 'app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+   // if (strpos(url, 'http://app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
 
     var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
     var options = {};
