@@ -170,8 +170,16 @@ windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
  
- var descarga = url.substr(url.length + 10);
+ var descarga = url.substr(url.length 4);
  alert(descarga);
+
+  var descarga2 = url.substr(url.length 0, 4);
+ alert(descarga2);
+
+  var descarga3 = url.substr(url.length 0 4);
+ alert(descarga3);
+
+
 
 /*
  if (descarga === false) {
