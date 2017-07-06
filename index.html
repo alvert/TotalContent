@@ -169,10 +169,11 @@ window.open = cordova.InAppBrowser.open;
 windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
-  alert(extension);
- var descarga = url.strpos(url, 'app.totalcontent.mx/pdf/?file=');
+ 
+ var descarga = url.substr(url.length + 10);
+ alert(descarga);
 
-
+/*
  if (descarga === false) {
 
     alert("es descarga")
@@ -182,7 +183,7 @@ windowref.addEventListener('loadstart', function(e) {
     alert("solo vista")
  
 }
-
+*/
 
   if (extension == '.pdf') {
 
