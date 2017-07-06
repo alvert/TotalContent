@@ -170,12 +170,12 @@ alert("es pdf");
 
                                                // windowref.close(); // close window or you get exception
 
-                                                document.addEventListener('deviceready', function () {
+                                              //  document.addEventListener('deviceready', function () {
                                                   $timeout(function() {
                                                     alert("si pasa ");
                                                     downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
                                                   }, 1000);
-                                                });
+                                              //  });
 
 
                      
@@ -196,19 +196,6 @@ alert("es pdf");
 
      windowref.addEventListener('loadstop', function() {
         //Page loaded! some code here..
-
-       //  ref.executeSript({code: "alert('BLA BLA BLA')"});
-
-        window.open = cordova.InAppBrowser.open;
-
-
-                function midescarga(element) {
-                    alert("midescarga en stop");
-                  var pdfurl = element.href;
-                  alert(pdfurl);
-                }
-
-
 
     });
 
@@ -233,6 +220,9 @@ alert("es pdf");
 
 
 function downloadReceipt(args) {
+
+alert("dos");
+
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
 
