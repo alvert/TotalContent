@@ -199,6 +199,7 @@ function downloadReceipt(args) {
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
   alert(uri);
+  window.open = cordova.InAppBrowser.open;
 
   fileTransfer.download(
     uri, // file's uri
