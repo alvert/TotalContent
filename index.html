@@ -125,11 +125,11 @@ windowref.addEventListener('loadstart', function(e) {
 
                                                // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
                                                var namefile = GetFilename(url);
-                                                var targetPath = cordova.file.externalRootDirectory + namefile;
+                                            var targetPath = cordova.file.externalRootDirectory + namefile + extension;
                                               alert(targetPath);
 
                                                 var options = {};
-                                                alert(targetPath);
+                                              
 
                                                 var args = {
                                                   url: url,
