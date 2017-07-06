@@ -205,8 +205,8 @@ function downloadReceipt(args) {
     args.targetPath, // where will be saved
     function(entry) {
       alert("download complete: " + entry.toURL());
-      window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
-    //  window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
+      //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
+     window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
     function(error) {
       alert("download error source " + error.source);
