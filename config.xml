@@ -50,13 +50,21 @@
     <preference name="WebViewBounce"                    value="true" />
 
 
-    <preference name="AndroidPersistentFileLocation" value="Internal" />
 
+
+
+<preference name="AndroidPersistentFileLocation" value="Internal" />
+<preference name="iosPersistentFileLocation" value="Library" />
+<preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
+<preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,root" />
+
+
+
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
 <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
 
 <preference name="iosPersistentFileLocation" value="Library" />
-
 <preference name="iosPersistentFileLocation" value="Compatibility" />
 
     
@@ -69,6 +77,9 @@
 <feature name="FileTransfer">
     <param name="android-package" value="org.apache.cordova.FileTransfer" />
 </feature>
+
+
+
 
 
 
