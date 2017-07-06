@@ -173,48 +173,52 @@ windowref.addEventListener('loadstart', function(e) {
  var descarga = url.substr(0,37);
  alert(descarga);
 
-
-
-
-
- if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
-
-    alert("vista")
-   // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
-} else {
-
-    alert("descarga")
- 
-}
-
-
-  if (extension == '.pdf') {
+      if (extension == '.pdf') {
 
 
 
 
 
-   // if (strpos(url, 'http://app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+                     if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
 
-    var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
-    var options = {};
-    var args = {
-      url: url,
-      targetPath: targetPath,
-      options: options
-    };
+                       // alert("vista")
+                       // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
+                    } else {
 
-    windowref.close(); // close window or you get exception
+                       // alert("descarga")
 
-    document.addEventListener('deviceready', function () {
-      $timeout(function() {
-        downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
-      }, 1000);
-    });
+                          // if (strpos(url, 'http://app.totalcontent.mx/pdf/?file=') !== true ) { alert("descarga"); } else { alert("vista"); }
+
+                                                var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
+                                                var options = {};
+                                                var args = {
+                                                  url: url,
+                                                  targetPath: targetPath,
+                                                  options: options
+                                                };
+
+                                                windowref.close(); // close window or you get exception
+
+                                                document.addEventListener('deviceready', function () {
+                                                  $timeout(function() {
+                                                    downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
+                                                  }, 1000);
+                                                });
+
+
+                     
+                    }
 
 
 
-  }
+
+
+
+      }
+
+
+
+
 });
 
 
