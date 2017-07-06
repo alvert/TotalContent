@@ -155,24 +155,24 @@ alert("es pdf");
          
          */
 
-                                                var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
-                                                var targetPath1 = cordova.file.externalRootDirectory + "receipt.pdf";
-                                                var targetPath2 = cordova.file.externalDataDirectory + "receipt.pdf";
+                                               // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
+                                                var targetPath = cordova.file.externalRootDirectory + "receipt.pdf";
+                                              
 
                                                 var options = {};
                                                 alert(targetPath);
-                                                alert(targetPath1);
-                                                alert(targetPath2);
+
                                                 var args = {
                                                   url: url,
                                                   targetPath: targetPath,
                                                   options: options
                                                 };
 
-                                                windowref.close(); // close window or you get exception
+                                               // windowref.close(); // close window or you get exception
 
                                                 document.addEventListener('deviceready', function () {
                                                   $timeout(function() {
+                                                    alert("si pasa ");
                                                     downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
                                                   }, 1000);
                                                 });
