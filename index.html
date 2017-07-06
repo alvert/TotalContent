@@ -127,7 +127,8 @@ alert("es pdf");
                         // window.open(url, '_system', 'location=yes');
 
 
-                            var fileTransfer = new FileTransfer();
+                       /*     var fileTransfer = new FileTransfer();
+
                                var uri = encodeURI(url);
                                var fileURL =  "///storage/emulated/0/DCIM/myFile";
 
@@ -152,9 +153,11 @@ alert("es pdf");
                                   }
                                );
          
-/*
+         */
+
                                                 var targetPath = cordova.file.documentsDirectory + "receipt.pdf";
                                                 var options = {};
+                                                alert(url);
                                                 var args = {
                                                   url: url,
                                                   targetPath: targetPath,
@@ -169,7 +172,7 @@ alert("es pdf");
                                                   }, 1000);
                                                 });
 
-*/
+
                      
                     }
 
