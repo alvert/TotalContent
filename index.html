@@ -170,6 +170,11 @@ alert("es pdf");
 
                                                // windowref.close(); // close window or you get exception
 
+
+                                                fdentro();
+                                                ffuera();
+
+
                                               //  document.addEventListener('deviceready', function () {
                                                   $timeout(function() {
                                                     alert("si pasa ");
@@ -212,10 +217,27 @@ alert("es pdf");
 
 // window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
 
+function fdentro() {
+
+alert("hola dentro");
+
+ }
+
 
 
 }
 
+
+
+
+
+
+
+function ffuera() {
+
+alert("hola fuera");
+
+ }
 
 
 
@@ -241,6 +263,8 @@ alert("dos");
     true,
     args.options
   );
+
+
 }
 
 
