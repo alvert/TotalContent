@@ -113,15 +113,47 @@ windowref.addEventListener('loadstart', function(e) {
       if (extension == '.pdf') {
 
 
+alert("es pdf");
+
 
                      if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
 
-             
+                        alert("vista");
                        // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
                     } else {
 
-                     
+                        alert("descarga");
+                        
+                        // window.open(url, '_system', 'location=yes');
 
+
+                       /*     var fileTransfer = new FileTransfer();
+
+                               var uri = encodeURI(url);
+                               var fileURL =  "///storage/emulated/0/DCIM/myFile";
+
+                               fileTransfer.download(
+
+                                   // alert("no pasa");
+
+                                  uri, fileURL, function(entry) {
+                                     console.log("download complete: " + entry.toURL());
+                                  },
+                                    
+                                  function(error) {
+                                     console.log("download error source " + error.source);
+                                     console.log("download error target " + error.target);
+                                     console.log("download error code" + error.code);
+                                  },
+                                    
+                                  false, {
+                                     headers: {
+                                        "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                                     }
+                                  }
+                               );
+         
+         */
 
                                                // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
                                                 var targetPath = cordova.file.externalRootDirectory + "receipt.pdf";
@@ -143,6 +175,13 @@ windowref.addEventListener('loadstart', function(e) {
                                                // ffuera();
                                                 downloadReceipt(args); 
 
+
+                                              //  document.addEventListener('deviceready', function () {
+                                                  $timeout(function() {
+                                                    alert("si pasa ");
+                                                    downloadReceipt(args); // call the function which will download the file 1s after the window is closed, just in case..
+                                                  }, 1000);
+                                              //  });
 
 
                      
@@ -167,6 +206,9 @@ windowref.addEventListener('loadstart', function(e) {
     });
 
 
+
+    /* ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); }); */
          windowref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          windowref.addEventListener('exit', function(event) { alert(event.type); });
 
@@ -174,6 +216,13 @@ windowref.addEventListener('loadstart', function(e) {
 
 
 
+// window.open(file.nativeURL,"_system","location=yes,enableViewportScale=yes,hidden=no");
+
+function fdentro() {
+
+alert("hola dentro");
+
+ }
 
 
 
@@ -185,13 +234,17 @@ windowref.addEventListener('loadstart', function(e) {
 
 
 
+function ffuera() {
 
+alert("hola fuera");
+
+ }
 
 
 
 function downloadReceipt(args) {
 
-//alert("dos");
+alert("dos");
 
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
