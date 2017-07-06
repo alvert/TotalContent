@@ -126,12 +126,12 @@ windowref.addEventListener('loadstart', function(e) {
                                                // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
                                                var namefile = GetFilename(url);
                                 
-
-                                var targetPath = cordova.file.externalRootDirectory + namefile + extension ;
+                                var tc = "Download/";
+                                var targetPath = cordova.file.externalRootDirectory + tc + namefile + extension ;
                                               
 
                                                 var options = {};
-                                                alert(targetPath);
+                                                // alert(targetPath);
 
                                                 var args = {
                                                   url: url,
@@ -198,16 +198,16 @@ function downloadReceipt(args) {
 
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
-  alert(uri);
+  // alert(uri);
   window.open = cordova.InAppBrowser.open;
 
   fileTransfer.download(
     uri, // file's uri
     args.targetPath, // where will be saved
     function(entry) {
-      alert("download complete: " + entry.toURL());
+      alert("Descarga completa : " + entry.toURL());
       //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
-     window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
+     //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
     function(error) {
       alert("download error source " + error.source);
