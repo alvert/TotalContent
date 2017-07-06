@@ -170,7 +170,19 @@ windowref.addEventListener('loadstart', function(e) {
   var url = e.url;
   var extension = url.substr(url.length - 4);
   alert(extension);
- // var descarga = url.strpos(url, 'app.totalcontent.mx/pdf/?file=');
+ var descarga = url.strpos(url, 'app.totalcontent.mx/pdf/?file=');
+
+
+ if (descarga === false) {
+
+    alert("es descarga")
+   // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
+} else {
+
+    alert("solo vista")
+ 
+}
+
 
   if (extension == '.pdf') {
 
