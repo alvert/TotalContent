@@ -184,11 +184,11 @@ windowref.addEventListener('loadstart', function(e) {
     });
 
 
-         windowref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         windowref.addEventListener('loaderror', function(event) { // alert('error: ' + event.message); });
          
          windowref.addEventListener('exit', function(event) { 
             navigator.app.exitApp();
-            alert(event.type);
+           // alert(event.type);
              });
 
 
@@ -244,7 +244,7 @@ fileTransfer.download(
   //$(".cuerpo").removeClass("loading");
   //windowref.executeSript({code: '$(".cuerpo").show(1000);'});
 
-     alert("El documento " + args.namefile + args.extension + " se descargo correctamente"); // entry.toURL());
+     alert("Documento " + args.namefile + args.extension + " descargado correctamente"); // entry.toURL());
      // windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
@@ -453,14 +453,6 @@ function gotFile(fileEntry) {
                 <object data="http://app.totalcontent.mx/"></object>
             </div>
         </div>-->
-        <a target="_system" href="http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf" download>boton</a>
-
-        <a target="_system" href="file://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf" download>boton</a>
-
-        <h2>My App</h2>
-    <div id="status"></div>
-
-    <button onclick="window.open('http://app.totalcontent.mx/wp-content/uploads/2017/05/NO-CTA-BANCARIOS-VW-INTERLOMAS.pdf', '_system', 'location=yes'); return false;">Download</button>
 
 
 
