@@ -224,7 +224,17 @@ windowref.addEventListener('loadstart', function(e) {
 
                                                // fdentro();
                                                // ffuera();
-                                                downloadReceipt(args); 
+                                                //downloadReceipt(args); 
+
+                                                var fail = function (message) {    
+                                                  // alert(message)
+                                                }
+                                                var success = function (data) {
+                                                    //   console.log("succes");
+                                                }
+                                                
+                            cordova.plugins.DownloadManager.download(url, success, fail);
+
 
 
 
@@ -295,7 +305,8 @@ function downloadReceipt(args) {
      // windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
-      window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
+      window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes");
+
      //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
     function(error) {

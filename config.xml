@@ -99,6 +99,9 @@
    <plugin name="org.apache.cordova.file" spec="4.3.3" />
 <plugin name="org.apache.cordova.file-transfer" spec="1.6.3" />
 <plugin name="org.apache.cordova.inappbrowser" spec="1.7.1" />
+
+<plugin spec="https://github.com/vasani-arpit/cordova-plugin-downloadmanager.git" source="git" />
+
  <!--   <plugin name="cordova-plugin-screenorientation-landscape" spec="1.6.3" /> -->
 
   <!--  <gap:plugin name="org.apache.cordova.core.inappbrowser" /> -->
