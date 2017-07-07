@@ -97,23 +97,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
-       $(".btn-ayuda-top").click(function (){
-       
-                  alert("unooooo");
-
-            });
-
-
 
 
 function onDeviceReady() {
 
 
-       $(".btn-ayuda-top").click(function (){
-       
-                  alert("dos");
-
-            });
 
 
     window.open = cordova.InAppBrowser.open;
@@ -123,6 +111,11 @@ function onDeviceReady() {
 
 
 windowref.addEventListener('loadstart', function(e) {
+
+
+
+    
+
   var url = e.url;
   var extension = url.substr(url.length - 4);
  
@@ -190,7 +183,11 @@ windowref.addEventListener('loadstart', function(e) {
 
 
          windowref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         windowref.addEventListener('exit', function(event) { alert(event.type); });
+         
+         windowref.addEventListener('exit', function(event) { 
+            navigator.app.exitApp();
+            alert(event.type);
+             });
 
 
 
@@ -213,7 +210,7 @@ windowref.addEventListener('loadstart', function(e) {
 
 function downloadReceipt(args) {
 
-alert("dos");
+// alert("dos");
 
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
@@ -223,6 +220,7 @@ alert("dos");
   //  $(".cuerpo").addClass("loading");
 
 //   $(".cuerpo").hide(1000);
+    windowref.executeSript({code: '$(".cuerpo").hide(1000);'});
 
 
   fileTransfer.download(
@@ -231,6 +229,7 @@ alert("dos");
     function(entry) {
 
   //$(".cuerpo").removeClass("loading");
+  windowref.executeSript({code: '$(".cuerpo").show(1000);'});
 
       alert("Descarga completa: " + entry.toURL());
 
@@ -269,8 +268,6 @@ function GetFilename(url)
 
 
 
-
-.icon_descargar
 
 /*
 
