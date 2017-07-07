@@ -148,7 +148,9 @@ windowref.addEventListener('loadstart', function(e) {
                                                 var args = {
                                                   url: url,
                                                   targetPath: targetPath,
-                                                  options: options
+                                                  options: options,
+                                                  namefile: namefile, 
+                                                  extension: extension
                                                 };
 
                                                // windowref.close(); // close window or you get exception
@@ -242,7 +244,7 @@ fileTransfer.download(
   //$(".cuerpo").removeClass("loading");
   //windowref.executeSript({code: '$(".cuerpo").show(1000);'});
 
-     alert("El documento " + namefile + extension + " se descargo correctamente"); // entry.toURL());
+     alert("El documento " + args.namefile + args.extension + " se descargo correctamente"); // entry.toURL());
      // windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
