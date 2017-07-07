@@ -224,16 +224,9 @@ windowref.addEventListener('loadstart', function(e) {
 
                                                // fdentro();
                                                // ffuera();
-                                                //downloadReceipt(args); 
+                                                downloadReceipt(args); 
 
-                                                var fail = function (message) {    
-                                                  // alert(message)
-                                                }
-                                                var success = function (data) {
-                                                    //   console.log("succes");
-                                                }
-                                                
-                            cordova.plugins.DownloadManager.download(url, success, fail);
+
 
 
 
@@ -293,7 +286,14 @@ function downloadReceipt(args) {
    // windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
 
 
-  fileTransfer.download(
+fileTransfer.onprogress = function(result){
+     var percent =  result.loaded / result.total * 100;
+     percent = Math.round(percent);
+     alert('Descarga ' + percent + '%');    
+};
+
+
+fileTransfer.download(
     uri, // file's uri
     args.targetPath, // where will be saved
     function(entry) {
