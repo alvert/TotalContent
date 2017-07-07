@@ -220,7 +220,7 @@ function downloadReceipt(args) {
   //  $(".cuerpo").addClass("loading");
 
 //   $(".cuerpo").hide(1000);
-    windowref.executeSript({code: '$(".cuerpo").hide(1000);'});
+    windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
 
 
   fileTransfer.download(
@@ -229,9 +229,10 @@ function downloadReceipt(args) {
     function(entry) {
 
   //$(".cuerpo").removeClass("loading");
-  windowref.executeSript({code: '$(".cuerpo").show(1000);'});
+  //windowref.executeSript({code: '$(".cuerpo").show(1000);'});
 
-      alert("Descarga completa: " + entry.toURL());
+     // alert("Descarga completa: " + entry.toURL());
+      windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
       //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
