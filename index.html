@@ -177,10 +177,67 @@ windowref.addEventListener('loadstart', function(e) {
 
 
      windowref.addEventListener('loadstop', function() {
-        //Page loaded! some code here..
+       
 
-        windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
-        windowref.executeSript({code: 'alert("haaaaaa");'});
+
+
+
+    
+
+  var url = e.url;
+  var extension = url.substr(url.length - 4);
+ 
+ var descarga = url.substr(0,37);
+ // alert(descarga);
+
+      if (extension == '.pdf') {
+
+
+
+                     if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
+
+             
+                       // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
+                    } else {
+
+                     
+
+
+                                               // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
+                                               var namefile = GetFilename(url);
+                                
+                                var tc = "TotalContent/";
+                                var targetPath = cordova.file.externalRootDirectory + tc + namefile + extension ;
+                                              
+
+                                                var options = {};
+                                                // alert(targetPath);
+
+                                                var args = {
+                                                  url: url,
+                                                  targetPath: targetPath,
+                                                  options: options
+                                                };
+
+                                               // windowref.close(); // close window or you get exception
+
+
+                                               // fdentro();
+                                               // ffuera();
+                                                downloadReceipt(args); 
+
+
+
+                     
+                    }
+
+
+
+
+
+
+      }
+
 
     });
 
@@ -223,7 +280,7 @@ function downloadReceipt(args) {
   //  $(".cuerpo").addClass("loading");
 
 //   $(".cuerpo").hide(1000);
-    windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
+   // windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
 
 
   fileTransfer.download(
@@ -234,11 +291,11 @@ function downloadReceipt(args) {
   //$(".cuerpo").removeClass("loading");
   //windowref.executeSript({code: '$(".cuerpo").show(1000);'});
 
-     // alert("Descarga completa: " + entry.toURL());
-      windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
+     alert("Descarga completa: " + entry.toURL());
+     // windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
-      //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
+      window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
      //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
     function(error) {
