@@ -179,6 +179,9 @@ windowref.addEventListener('loadstart', function(e) {
      windowref.addEventListener('loadstop', function() {
         //Page loaded! some code here..
 
+        windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
+        windowref.executeSript({code: 'alert("haaaaaa");'});
+
     });
 
 
