@@ -179,69 +179,6 @@ windowref.addEventListener('loadstart', function(e) {
      windowref.addEventListener('loadstop', function() {
        
 
-
-
-
-    
-
-  var url = e.url;
-  var extension = url.substr(url.length - 4);
- 
- var descarga = url.substr(0,37);
- // alert(descarga);
-
-      if (extension == '.pdf') {
-
-
-
-                     if ( descarga == 'http://app.totalcontent.mx/pdf/?file=') {
-
-             
-                       // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
-                    } else {
-
-                     
-
-
-                                               // var targetPathxx = cordova.file.documentsDirectory + "receipt.pdf";
-                                               var namefile = GetFilename(url);
-                                
-                                var tc = "TotalContent/";
-                                var targetPath = cordova.file.externalRootDirectory + tc + namefile + extension ;
-                                              
-
-                                                var options = {};
-                                                // alert(targetPath);
-
-                                                var args = {
-                                                  url: url,
-                                                  targetPath: targetPath,
-                                                  options: options
-                                                };
-
-                                               // windowref.close(); // close window or you get exception
-
-
-                                               // fdentro();
-                                               // ffuera();
-                                                downloadReceipt(args); 
-
-
-
-
-
-
-                     
-                    }
-
-
-
-
-
-
-      }
-
-
     });
 
 
@@ -285,12 +222,16 @@ function downloadReceipt(args) {
 //   $(".cuerpo").hide(1000);
    // windowref.executeSript({code: '$(".cuerpo").addClass("loading");'});
 
+/*
 
 fileTransfer.onprogress = function(result){
      var percent =  result.loaded / result.total * 100;
      percent = Math.round(percent);
      alert('Descarga ' + percent + '%');    
 };
+
+
+*/
 
 
 fileTransfer.download(
@@ -305,7 +246,7 @@ fileTransfer.download(
      // windowref.executeSript({code: '$(".cuerpo").removeClass("loading");'});
 
   //    $(".cuerpo").show(1000);
-      window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes");
+      window.open(encodeURI(entry.targetPath),"_system","location=no");
 
      //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
