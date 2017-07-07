@@ -201,18 +201,23 @@ function downloadReceipt(args) {
   var fileTransfer = new FileTransfer();
   var uri = encodeURI(args.url);
   // alert(uri);
-  window.open = cordova.InAppBrowser.open;
 
-  // $(".cuerpo").addClass("loading");
+
+    $(".cuerpo").addClass("loading");
+
+   $(".cuerpo").hide(1000);
+
 
   fileTransfer.download(
     uri, // file's uri
     args.targetPath, // where will be saved
     function(entry) {
 
-  //  $(".cuerpo").removeClass("loading");
+  //$(".cuerpo").removeClass("loading");
 
-      alert("Descarga completa : " + entry.toURL());
+      alert("Descarga completa: " + entry.toURL());
+
+      $(".cuerpo").show(1000);
       //window.open(encodeURI(entry.targetPath),"_blank","location=no,enableViewportScale=yes")
      //window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
     },
